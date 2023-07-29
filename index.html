@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Stein, Papir, Saks</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <h1>Spillet av STEIN, PAPIR, SAKS</h1>
+	<script>
+       const choices = ["stein", "papir", "saks"];
+       function getComputerChoice(choices){   //get computer choice
+        return choices[Math.floor((Math.random()*choices.length))]
+       } 
+
+       function getPlayerChoice(choices){   //get player choice
+        if (playerchoice == computerchoice){
+            return "It is a tie."
+        }
+        else if (playerchoice=="papir" && computerchoice=="saks"){
+            return "You lose. Saks beats papir"
+        }
+        else if (playerchoice=="papir" && computerchoice=="stein"){
+            return "You win. Papir beats Stein"
+        }
+        else if (playerchoice=="saks" && computerchoice=="stein"){
+            return "You lose. Stein beats saks"
+        }
+        else if (playerchoice=="saks" && computerchoice=="papir"){
+            return "You win. Saks beats papir"
+        }
+        else if (playerchoice=="stein" && computerchoice=="papir"){
+            return "You lose. Papir beats stein"
+        }
+        else if (playerchoice=="stein" && computerchoice=="saks"){
+            return "You win. Stein beats saks."
+        }
+       }
+    </script>
+  </body>
+</html>
