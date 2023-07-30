@@ -8,36 +8,78 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <h1>Spillet av STEIN, PAPIR, SAKS</h1>
+    <h1>Spillet av ROCK, PAPER, SCISSORS</h1>
 	<script>
+        const compChoice = ["Rock", "Paper", "Scissors"]
+        const playerChoice = ["Rock", "Paper", "Scissors"]
+
+        function getComputerChoice(compChoice){
+            return compChoice[Math.floor(Math.random()*compChoice.length)];
+        }
+
+        function playRound(playerSelection, computerSelection) {
+            if(playerSelection == computerSelection){
+                return "It is a tie."
+            }
+            else if(playerSelection == "Rock" && computerSelection == "Scissors"){
+                return "You win. Rock smashes scissors."
+            }
+            else if(playerSelection == "Rock" && computerSelection == "Paper"){
+                return "You lose. Rock is covered by paper."
+            }
+            else if(playerSelection == "Paper" && computerSelection == "Rock"){
+                return "You win. Paper covers rock."
+            }
+            else if(playerSelection == "Paper" && computerSelection == "Scissors"){
+                return "You lose. Paper is cut by scissors."
+            }
+            else if(playerSelection == "Scissors" && computerSelection == "Paper"){
+                return "You win. Scissors cuts paper."
+            }
+            else if(playerSelection == "Scissors" && computerSelection == "Rock"){
+                return "You lose. Scissors is smashed by rock."
+            }
+        }
+ 
+        const playerSelection = "rock";
+        const computerSelection = getComputerChoice(compChoice);
+        console.log(playRound(playerSelection, computerSelection));
+/*
        const choices = ["stein", "papir", "saks"];
+       const computerSelection = getComputerChoice(choices);
+
        function getComputerChoice(choices){   //get computer choice
         return choices[Math.floor((Math.random()*choices.length))]
        } 
 
-       function getPlayerChoice(choices){   //get player choice
-        if (playerchoice == computerchoice){
+       function playRound(playerSelection, computerSelection){   //get player choice
+        if (playerSelection == computerSelection){
             return "It is a tie."
         }
-        else if (playerchoice=="papir" && computerchoice=="saks"){
+        else if (playerSelection=="papir" && computerSelection=="saks"){
             return "You lose. Saks beats papir"
         }
-        else if (playerchoice=="papir" && computerchoice=="stein"){
+        else if (playerSelection=="papir" && computerSelection=="stein"){
             return "You win. Papir beats Stein"
         }
-        else if (playerchoice=="saks" && computerchoice=="stein"){
+        else if (playerSelection=="saks" && computerSelection=="stein"){
             return "You lose. Stein beats saks"
         }
-        else if (playerchoice=="saks" && computerchoice=="papir"){
+        else if (playerSelection=="saks" && computerSelection=="papir"){
             return "You win. Saks beats papir"
         }
-        else if (playerchoice=="stein" && computerchoice=="papir"){
+        else if (playerSelection=="stein" && computerSelection=="papir"){
             return "You lose. Papir beats stein"
         }
-        else if (playerchoice=="stein" && computerchoice=="saks"){
+        else if (playerSelection=="stein" && computerSelection=="saks"){
             return "You win. Stein beats saks."
         }
        }
+
+
+       const playerSelection = "papir";
+*/
+    
     </script>
   </body>
 </html>
