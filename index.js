@@ -1,6 +1,6 @@
-export{};
 
-const choices = ["stein", "papir", "saks"];
+
+const options = ["stein", "papir", "saks"];
 
 function getComputerChoice (){
   const choice = options[Math.floor(Math.random()*options.length)];
@@ -29,7 +29,7 @@ function playRound(playerSelection, computerSelection){
     return "It is a tie."
   }
   else if (result == "Player"){
-    return `The human wins. ${playerSelection} absolutely beats the shit out of ${computerSelection}.`
+    return `The human wins. ${playerSelection} absolutely beats ${computerSelection}.`
   }
   else {
     return `The computer wins. ${computerSelection} demolishes ${playerSelection}. Death to all humans.`
@@ -49,13 +49,14 @@ function getPlayerChoice(){
       return choiceInLower;
       
     }
+    
   }
 }
 
 function game (){
   let scorePlayer = 0;
   let scoreComputer = 0;
-  for (let i = 0, i < 5, i++){
+  for (i = 0; i < 5; i++){
     const playerSelection = getPlayerChoice();
     const computerSelection = getComputerChoice();
     console.log(playRound(playerSelection, computerSelection));
