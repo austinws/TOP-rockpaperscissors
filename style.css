@@ -2,12 +2,18 @@ body {
     background-color: rgb(183, 218, 248);
 }
 
-h1{
+h1 {
     color: black;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 30px;
     text-align: center;
+    padding: 10px 10px;
     
+}
+
+p {
+    padding: 10px 10px;
+    font-size: 20px;
 }
 
 .flex-container {
@@ -26,4 +32,16 @@ button {
 
 button:hover {
     cursor: crosshair;
+}
+
+.photos {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.photo {
+    height: 300px;
+    width: 300px;
+    border-radius: 10px;
 }
